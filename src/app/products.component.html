@@ -1,4 +1,5 @@
 <h1>Products Component</h1>
 <input type="text" [(ngModel)]="productName">
-<button (click)="productName = 'A Tree'" [disabled]="isDisabled">Change Name</button>
+<!-- <button (click)="productName = 'A Tree'" [disabled]="isDisabled">Change Name</button> -->
+<button (click)="onAddProduct()">Add Product</button>
 <div>{{ productName }}</div>

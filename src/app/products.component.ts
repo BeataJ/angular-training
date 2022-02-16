@@ -14,4 +14,11 @@ export class ProductsComponent {
       this.isDisabled = true;
     }, 3000);
   }
+
+  onAddProduct() {
+
+  }
+
+
 }
+
