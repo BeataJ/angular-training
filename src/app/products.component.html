@@ -2,4 +2,4 @@
 <input type="text" [(ngModel)]="productName">
 <!-- <button (click)="productName = 'A Tree'" [disabled]="isDisabled">Change Name</button> -->
 <button (click)="onAddProduct()">Add Product</button>
-<div>{{ productName }}</div>
+<div *ngFor="let product of products">{{ product }}</div>
