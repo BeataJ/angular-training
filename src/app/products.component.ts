@@ -6,13 +6,13 @@ import { Component } from "@angular/core";
 })
 export class ProductsComponent {
   productName = 'A Book';
-  isDisabled = false;
+  isDisabled = true;
   products = ['A Book', 'A Tree']
 
   constructor() {
     setTimeout(() => {
       // this.productName = 'A Tree';
-      this.isDisabled = true;
+      this.isDisabled = false;
     }, 3000);
   }
 
