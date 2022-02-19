@@ -1,7 +1,7 @@
 <h1>Products Component</h1>
-<form>
-  <input *ngIf="!isDisabled" type="text" [(ngModel)]="productName">
-  <button *ngIf="!isDisabled" (click)="onAddProduct()">Add Product</button>
+<form (ngSubmit)="onAddProduct()">
+  <input type="text" ngModel name="productName" required>
+  <button type="submit">Add Product</button>
 </form>
 <!-- <input *ngIf="!isDisabled" type="text" [(ngModel)]="productName"> -->
 <!-- <button (click)="productName = 'A Tree'" [disabled]="isDisabled">Change Name</button> -->
