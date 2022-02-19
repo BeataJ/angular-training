@@ -7,10 +7,13 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
   @Input() productName: string | undefined;
+  @Output() productClicked = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onClicked(){}
+  onClicked(){
+    this.productClicked.emit();
+  }
 }
