@@ -16,8 +16,9 @@ export class ProductsComponent {
     }, 3000);
   }
 
-  onAddProduct() {
-    this.products.push(this.productName)
+  onAddProduct(form: any) {
+    // this.products.push(this.productName)
+    console.log(form)
   }
 
   onRemoveProduct(productName: string){

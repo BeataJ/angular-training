@@ -1,5 +1,5 @@
 <h1>Products Component</h1>
-<form (ngSubmit)="onAddProduct()">
+<form (ngSubmit)="onAddProduct(f)" #f="ngForm">
   <input type="text" ngModel name="productName" required>
   <button type="submit">Add Product</button>
 </form>
