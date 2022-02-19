@@ -18,7 +18,10 @@ export class ProductsComponent {
 
   onAddProduct(form: any) {
     // this.products.push(this.productName)
-    console.log(form)
+    // console.log(form)
+    if(form.valid) {
+      this.products.push(form.value.productName)
+    }
   }
 
   onRemoveProduct(productName: string){
