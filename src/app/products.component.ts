@@ -8,12 +8,14 @@ import { ProductsService } from "./products.service";
 export class ProductsComponent {
   productName = 'A Book';
   isDisabled = true;
-  products = ['A Book', 'A Tree']
+  products = ['']
 
-  constructor(productsService: ProductsService) {
+  constructor(private productsService: ProductsService) {
+    this.products = this.productsService.getProducts();
     setTimeout(() => {
       // this.productName = 'A Tree';
       this.isDisabled = false;
+
     }, 3000);
   }
 
@@ -21,7 +23,8 @@ export class ProductsComponent {
     // this.products.push(this.productName)
     // console.log(form)
     if(form.valid) {
-      this.products.push(form.value.productName)
+      // this.products.push(form.value.productName)
+      this.productsService.addProduct(form.value.productName);
     }
   }
 
