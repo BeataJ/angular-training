@@ -1,14 +1,16 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ProductsService } from "./products.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
 })
-export class ProductsComponent  implements OnInit {
+export class ProductsComponent  implements OnInit, OnDestroy {
   productName = 'A Book';
   isDisabled = true;
   products = ['']
+  private productsSubscription!: Subscription;
 
   constructor(private productsService: ProductsService) {
 
@@ -34,9 +36,13 @@ export class ProductsComponent  implements OnInit {
 
   ngOnInit(): void {
       this.products = this.productsService.getProducts();
-      this.productsService.productsUpdated.subscribe(() => {
+      this.productsSubscription = this.productsService.productsUpdated.subscribe(() => {
         this.products = this.productsService.getProducts();
       })
+  }
+
+  ngOnDestroy(): void {
+      this.productsSubscription.unsubscribe();
   }
 
 }
