@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ProductsService } from "./products.service";
 
 @Component({
   selector: 'app-products',
@@ -9,7 +10,7 @@ export class ProductsComponent {
   isDisabled = true;
   products = ['A Book', 'A Tree']
 
-  constructor() {
+  constructor(productsService: ProductsService) {
     setTimeout(() => {
       // this.productName = 'A Tree';
       this.isDisabled = false;
