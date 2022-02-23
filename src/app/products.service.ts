@@ -13,4 +13,9 @@ export class ProductsService {
     return [...this.products];
   }
 
+  deleteProduct(productName: string) {
+    this.products = this.products.filter(p => p !== productName)
+    this.productsUpdated.next(this.products)
+  }
+
 }
